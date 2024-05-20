@@ -1,0 +1,86 @@
+---
+import { Image } from "astro:assets";
+import MyLogo from "../assets/logo.webp";
+---
+
+<aside id="navBar" class="navBar">
+  <div id="menuContainer2" class="close-btn-container z-50">
+    <button class="hamburger" aria-label="Cerrar menú">
+      <span class="line line1"></span>
+      <span class="line line2"></span>
+      <span class="line line3"></span>
+    </button>
+  </div>
+
+  <div class="flex flex-col items-center">
+
+    <Image id="logo" src={MyLogo} alt="Logo" loading="eager" class="rounded-full h-40 w-40 mb-6"/> 
+    <nav
+      class="flex flex-col justify-center items-center gap-5 my-10 sm:hidden opacity-80 text-2xl font-semibold"
+    >
+      <a href="#home">Inicio</a>
+      <a href="#projects">Muestrario</a>
+      <!-- En un futuro aquí irán los proyectos -->
+      <a href="#about">Sobre mi</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+
+    <div class="flex gap-3 mt-6">
+      <!-- En futuro poner acá el linkedin y el github  -->
+      <a target="_blank" href="mailto:vladimircf.pv@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="2rem" height="2rem" viewBox="0,0,256,256">
+       <title>Gmail</title> <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path class="mi-path" d="M12,23.403v-0.013v-13.001l-0.12,-0.089h-0.01l-2.73,-2.02c-1.67,-1.24 -4.05,-1.18 -5.53,0.28c-0.99,0.98 -1.61,2.34 -1.61,3.85v3.602zM38,23.39v0.013l10,-7.391v-3.602c0,-1.49 -0.6,-2.85 -1.58,-3.83c-1.46,-1.457 -3.765,-1.628 -5.424,-0.403l-2.876,2.123l-0.12,0.089zM14,24.868l10.406,7.692c0.353,0.261 0.836,0.261 1.189,0l10.405,-7.692v-13.001l-11,8.133l-11,-8.133zM38,25.889v15.111c0,0.552 0.448,1 1,1h6.5c1.381,0 2.5,-1.119 2.5,-2.5v-21.003zM12,25.889l-10,-7.392v21.003c0,1.381 1.119,2.5 2.5,2.5h6.5c0.552,0 1,-0.448 1,-1z"></path></g></g>
+        </svg></a>
+      <a target="_blank" href="https://t.me/hakaiz"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="2rem" height="2rem" viewBox="0,0,256,256">
+      <title>Telegram</title>  <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path class="mi-path" d="M25,2c12.703,0 23,10.297 23,23c0,12.703 -10.297,23 -23,23c-12.703,0 -23,-10.297 -23,-23c0,-12.703 10.297,-23 23,-23zM32.934,34.375c0.423,-1.298 2.405,-14.234 2.65,-16.783c0.074,-0.772 -0.17,-1.285 -0.648,-1.514c-0.578,-0.278 -1.434,-0.139 -2.427,0.219c-1.362,0.491 -18.774,7.884 -19.78,8.312c-0.954,0.405 -1.856,0.847 -1.856,1.487c0,0.45 0.267,0.703 1.003,0.966c0.766,0.273 2.695,0.858 3.834,1.172c1.097,0.303 2.346,0.04 3.046,-0.395c0.742,-0.461 9.305,-6.191 9.92,-6.693c0.614,-0.502 1.104,0.141 0.602,0.644c-0.502,0.502 -6.38,6.207 -7.155,6.997c-0.941,0.959 -0.273,1.953 0.358,2.351c0.721,0.454 5.906,3.932 6.687,4.49c0.781,0.558 1.573,0.811 2.298,0.811c0.725,0 1.107,-0.955 1.468,-2.064z"></path></g></g>
+        </svg></a>
+      <a target="_blank" href="https://wa.me/+5358876004"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="2rem" height="2rem" viewBox="0,0,256,256">
+        <title>WhatsApp</title> <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path class="mi-path" d="M25,2c-12.682,0 -23,10.318 -23,23c0,3.96 1.023,7.854 2.963,11.29l-2.926,10.44c-0.096,0.343 -0.003,0.711 0.245,0.966c0.191,0.197 0.451,0.304 0.718,0.304c0.08,0 0.161,-0.01 0.24,-0.029l10.896,-2.699c3.327,1.786 7.074,2.728 10.864,2.728c12.682,0 23,-10.318 23,-23c0,-12.682 -10.318,-23 -23,-23zM36.57,33.116c-0.492,1.362 -2.852,2.605 -3.986,2.772c-1.018,0.149 -2.306,0.213 -3.72,-0.231c-0.857,-0.27 -1.957,-0.628 -3.366,-1.229c-5.923,-2.526 -9.791,-8.415 -10.087,-8.804c-0.295,-0.389 -2.411,-3.161 -2.411,-6.03c0,-2.869 1.525,-4.28 2.067,-4.864c0.542,-0.584 1.181,-0.73 1.575,-0.73c0.394,0 0.787,0.005 1.132,0.021c0.363,0.018 0.85,-0.137 1.329,1.001c0.492,1.168 1.673,4.037 1.819,4.33c0.148,0.292 0.246,0.633 0.05,1.022c-0.196,0.389 -0.294,0.632 -0.59,0.973c-0.296,0.341 -0.62,0.76 -0.886,1.022c-0.296,0.291 -0.603,0.606 -0.259,1.19c0.344,0.584 1.529,2.493 3.285,4.039c2.255,1.986 4.158,2.602 4.748,2.894c0.59,0.292 0.935,0.243 1.279,-0.146c0.344,-0.39 1.476,-1.703 1.869,-2.286c0.393,-0.583 0.787,-0.487 1.329,-0.292c0.542,0.194 3.445,1.604 4.035,1.896c0.59,0.292 0.984,0.438 1.132,0.681c0.148,0.242 0.148,1.41 -0.344,2.771z"></path></g></g>
+        </svg></a>
+
+    </div>
+  </div>
+</aside>
+
+<style>
+  .linkNavBar {
+    @apply text-2xl;
+  }
+
+  .navBar {
+    @apply -left-full transition-all duration-500 ease-in-out fixed top-0 bottom-0 w-[85vw] bg-gray-800 z-20 flex flex-col;
+  }
+
+  .navBar.active {
+    @apply left-0;
+  }
+
+/* Botón hamburguesa */
+
+  .close-btn-container {
+    @apply self-end mr-2;
+  }
+
+  .hamburger {
+    @apply mt-2;
+  }
+  .line {
+    @apply block w-8 h-1 bg-[#cbd8ec] my-1 transition-transform duration-100 ease-in-out;
+  }
+
+  /* Cuando el menú esté activo, cambia las líneas para formar una equis */
+  .close-btn-container.active .line1 {
+    @apply transform rotate-45 translate-y-2 translate-x-1;
+  }
+
+  .close-btn-container.active .line2 {
+    @apply opacity-0;
+  }
+
+  .close-btn-container.active .line3 {
+    @apply transform -rotate-45 -translate-y-2 translate-x-1;
+  }
+
+
+ 
+
+</style>

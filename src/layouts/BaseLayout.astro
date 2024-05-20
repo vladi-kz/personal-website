@@ -1,0 +1,96 @@
+---
+import Header from "../components/Header.astro";
+import NavBar from "../components/NavBar.astro";
+
+import "@fontsource-variable/onest";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="../../public/logo.webp" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="flex flex-col items-center justify-center bg-gray-900 text-gray-400">
+    <div class="sm:hidden" id="overlay"></div>
+
+    <Header />
+    <NavBar />
+    
+    <slot />
+
+    
+  </body>
+</html>
+<style is:global>
+  
+
+  html {
+    color-scheme: light dark;
+    font-family: "Onest Variable", system-ui, sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+
+  }
+
+  a{
+    transition: all 0.1s ease;
+    @apply text-gray-300
+  }
+
+  nav a:hover{
+    text-shadow: 2px 0px 5px #c4c9d6, 
+	  -1px 0px 3px #9da9c2, 
+	  0px 2px 3px #a9b1c2;
+    color: #ffffff;
+  transform: scale(1.08);
+
+  }
+
+/* Div que se activa y oscurece el div cuando aparece la navBar */
+
+  #overlay {
+  @apply fixed -z-10 inset-0 bg-black opacity-0 transition-opacity duration-500 ease-in-out;
+}
+
+#overlay.active {
+  @apply opacity-95 z-20;
+}
+
+
+ /* Íconos svg de contacto */
+
+ svg:hover .mi-path {
+    fill: black;
+}
+  svg {
+    transition: all 0.1s ease;
+}
+
+svg:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px white)
+}
+svg:active {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px white)
+}
+
+/* Para animar la imagen de la navBar */
+
+#logo {
+  transition: transform 0.5s ease-in-out;
+}
+
+.navBar.open #logo {
+  transform: rotate(360deg);
+}
+</style>

@@ -1,0 +1,95 @@
+---
+import { Image } from "astro:assets";
+import banner1 from "../assets/banner1.webp";
+import banner2 from "../assets/banner2.webp";
+import banner3 from "../assets/banner3.webp";
+import banner4 from "../assets/banner4.webp";
+import banner5 from "../assets/banner5.webp";
+---
+
+<div class="container-carousel sm:w-[70vw]">
+  <div class="carruseles" id="slider">
+    <section class="slider-section">
+      <Image loading="eager" src={banner1} alt="ej1"/>
+    </section>
+    <section class="slider-section">
+      <Image loading="eager" src={banner2} alt="ej2" />
+    </section>
+    <section class="slider-section">
+      <Image loading="eager" src={banner3} alt="ej3" />
+    </section>
+    <section class="slider-section">
+      <Image loading="eager" src={banner4} alt="ej4" />
+    </section>
+    <section class="slider-section">
+      <Image loading="eager" src={banner5} alt="ej5" />
+    </section>
+  </div>
+  <div class="btn-left"><</div>
+  <div class="btn-right">></div>
+</div>
+
+<script>
+  import './slider.js';
+</script>
+
+<style>
+  .container-carousel {
+    position: relative;
+    @apply w-80 sm:w-[400px] md:w-[450px];
+    height: auto;
+    background-color: #e0e0e0;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.66);
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .carruseles {
+    width: 500%;
+    height: 100%;
+    display: flex;
+  }
+
+  .slider-section {
+    width: calc(100% / 5);
+    height: 100%;
+  }
+
+  .slider-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  .btn-left,
+  .btn-right {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border-radius: 100%;
+    padding: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #000;
+    transform: translate(0, -50%);
+    transition: 0.5s ease;
+    user-select: none;
+  }
+
+  .btn-right{
+    right: 5px;
+  }
+
+  .btn-left{
+    left: 5px;
+  }
+
+  .btn-left:hover,
+  .btn-right:hover {
+    background-color: #333333d4;
+    color: #fff;
+  }
+</style>

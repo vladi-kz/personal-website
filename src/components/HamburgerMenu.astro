@@ -1,0 +1,76 @@
+---
+
+---
+
+<div class="menu-container" id="menuContainer">
+  <button class="hamburger" aria-label="Menu" aria-controls="navigation">
+    <span class="line line1"></span>
+    <span class="line line2"></span>
+    <span class="line line3"></span>
+  </button>
+</div>
+
+<style>
+  /* Estilos para el menú hamburguesa */
+  .menu-container {
+    @apply sm:hidden z-50;
+  }
+
+  .hamburger {
+    @apply mt-2;
+  }
+  .line {
+    @apply block w-8 h-1 bg-[#cbd8ec] my-1 transition-transform duration-100 ease-in-out;
+  }
+
+  /* Cuando el menú esté activo, cambia las líneas para formar una equis */
+
+  .menu-container.active .line1 {
+    @apply transform rotate-45 translate-y-2 translate-x-1;
+  }
+
+  .menu-container.active .line2 {
+    @apply opacity-0;
+  }
+
+  .menu-container.active .line3 {
+    @apply transform -rotate-45 -translate-y-2 translate-x-1;
+  }
+</style>
+
+<script>
+  // Lógica de JavaScript para el menú hamburger y la navBar
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuContainer = document.querySelector("#menuContainer");
+    const menuContainer2 = document.querySelector("#menuContainer2");
+    const navbar = document.querySelector("#navBar");
+    const hamburger = menuContainer.querySelector(".hamburger");
+    const overlay = document.querySelector("#overlay");
+
+    navbar.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+        overlay.classList.toggle("active");
+        menuContainer.classList.toggle("active");
+        menuContainer2.classList.toggle("active");
+      });
+    });
+
+    hamburger.addEventListener("click", () => {
+      menuContainer.classList.toggle("active");
+      menuContainer2.classList.toggle("active");
+      navbar.classList.toggle("active");
+      overlay.classList.toggle("active");
+      navbar.classList.toggle('open');
+    });
+
+    // Reutilizando el botón del menú hamburguesa para la navBar
+    navbar.querySelector(".hamburger").addEventListener("click", () => {
+      menuContainer.classList.toggle("active");
+      menuContainer2.classList.toggle("active");
+      navbar.classList.toggle("active");
+      overlay.classList.toggle("active");
+    });
+  });
+</script>
