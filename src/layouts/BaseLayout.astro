@@ -14,96 +14,117 @@ const { title } = Astro.props;
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="https://vladi-kz.github.io/personal-website/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://vladi-kz.github.io/personal-website/favicon.ico"
+    />
 
-
-<link rel="apple-touch-icon" sizes="180x180" href="https://vladi-kz.github.io/personal-website/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://vladi-kz.github.io/personal-website/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://vladi-kz.github.io/personal-website/favicon-16x16.png">
-<link rel="manifest" href="https://vladi-kz.github.io/personal-website/site.webmanifest">
-<link rel="mask-icon" href="https://vladi-kz.github.io/personal-website/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-
-
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://vladi-kz.github.io/personal-website/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://vladi-kz.github.io/personal-website/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://vladi-kz.github.io/personal-website/favicon-16x16.png"
+    />
+    <link
+      rel="manifest"
+      href="https://vladi-kz.github.io/personal-website/site.webmanifest"
+    />
+    <link
+      rel="mask-icon"
+      href="https://vladi-kz.github.io/personal-website/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Desarrollador web disponible. Creación de sitios e-commerce y páginas web personalizadas.">
+    <meta
+      name="description"
+      content="Desarrollador web disponible. Creación de sitios e-commerce y páginas web personalizadas."
+    />
     <title>{title}</title>
   </head>
-  <body class="flex flex-col items-center justify-center bg-gray-900 text-gray-300">
+  <body
+    class="flex flex-col items-center justify-center bg-gray-900 text-gray-300"
+  >
     <div class="sm:hidden" id="overlay"></div>
 
     <Header />
     <NavBar />
-    
-    <slot />
 
-    
+    <slot />
   </body>
 </html>
 <style is:global>
-  
-
   html {
     color-scheme: light dark;
     font-family: "Onest Variable", system-ui, sans-serif;
     scroll-behavior: smooth;
     margin: 0;
-
   }
 
-  a{
+  a {
     transition: all 0.1s ease;
-    @apply text-gray-300
+    @apply text-gray-300;
   }
 
-  nav a:hover{
-    text-shadow: 2px 0px 5px #c4c9d6, 
-	  -1px 0px 3px #9da9c2, 
-	  0px 2px 3px #a9b1c2;
+  nav a:hover {
+    text-shadow:
+      2px 0px 5px #c4c9d6,
+      -1px 0px 3px #9da9c2,
+      0px 2px 3px #a9b1c2;
     color: #ffffff;
-  transform: scale(1.08);
-
+    transform: scale(1.08);
   }
 
-/* Div que se activa y oscurece el div cuando aparece la navBar */
+  /* Div que se activa y oscurece el div cuando aparece la navBar */
 
   #overlay {
-  @apply fixed -z-10 inset-0 bg-black opacity-0 transition-opacity duration-500 ease-in-out;
-}
+    @apply fixed -z-10 inset-0 bg-black opacity-0 transition-opacity duration-500 ease-in-out;
+  }
 
-#overlay.active {
-  @apply opacity-95 z-20;
-}
+  #overlay.active {
+    @apply opacity-95 z-20;
+  }
 
+  /* Íconos svg de contacto */
 
- /* Íconos svg de contacto */
-
- svg:hover .mi-path {
+  svg:hover .mi-path {
     fill: black;
-}
+  }
   svg {
     transition: all 0.1s ease;
-}
+  }
 
-svg:hover {
+  svg:hover {
     transform: scale(1.1);
-    filter: drop-shadow(0 0 10px white)
-}
-svg:active {
+    filter: drop-shadow(0 0 10px white);
+  }
+  svg:active {
     transform: scale(1.1);
-    filter: drop-shadow(0 0 10px white)
-}
+    filter: drop-shadow(0 0 10px white);
+  }
 
-/* Para animar la imagen de la navBar */
+  /* Para animar la imagen de la navBar */
 
-#logo {
-  transition: transform 0.5s ease-in-out;
-}
+  #logo {
+    transition: transform 0.5s ease-in-out;
+  }
 
-.navBar.open #logo {
-  transform: rotate(360deg);
-}
+  .navBar.open #logo {
+    transform: rotate(360deg);
+  }
 </style>

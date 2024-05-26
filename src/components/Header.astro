@@ -1,7 +1,7 @@
 ---
 import HamburgerMenu from "../components/HamburgerMenu.astro";
 import { Image } from "astro:assets";
-import logo from "../assets/logo.webp"
+import logo from "../assets/logo.webp";
 ---
 
 <header
@@ -10,7 +10,12 @@ import logo from "../assets/logo.webp"
 >
   <HamburgerMenu />
 
-  <Image src={logo} alt="Logo" loading="eager" class="hidden sm:inline-block h-16 w-16 rounded-full"/>
+  <Image
+    src={logo}
+    alt="Logo"
+    loading="eager"
+    class="hidden sm:inline-block h-16 w-16 rounded-full"
+  />
 
   <nav class="hidden sm:flex gap-x-5 opacity-80 font-semibold">
     <a href="#home">Inicio</a>
@@ -22,18 +27,16 @@ import logo from "../assets/logo.webp"
 </header>
 
 <style>
-
-/* Este tipo de animación aún no está soportada por todos lo navegadores */
-#header{
-  animation: header-animation both .5s linear ;
-  animation-timeline: scroll(root);
-  animation-range: 0 20px;
-}
-
-@keyframes header-animation {
-  to{
-    @apply shadow-lg shadow-black;
+  /* Este tipo de animación aún no está soportada por todos lo navegadores */
+  #header {
+    animation: header-animation both 0.5s linear;
+    animation-timeline: scroll(root);
+    animation-range: 0 20px;
   }
-}
 
+  @keyframes header-animation {
+    to {
+      @apply shadow-lg shadow-black;
+    }
+  }
 </style>
