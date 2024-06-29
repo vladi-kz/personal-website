@@ -9,7 +9,7 @@ import Slider from "../components/Slider.astro";
   <main class="m-0 w-[86vw] md:w-[70vw] text-center">
     <section
       id="home"
-      class="pt-10 flex flex-col items-center justify-center h-[100vh]"
+      class="pt-10 flex flex-col items-center justify-center h-screen"
     >
       <h1 class="text-5xl lg:text-6xl font-bold">Hola, soy Vladimir.KZ</h1>
       <h2 class="text-[#a9792b] text-4xl lg:text-5xl my-2 font-bold">
@@ -52,35 +52,31 @@ import Slider from "../components/Slider.astro";
 
     <section
       id="about"
-      class="h-[100vh] flex flex-col text-start justify-center"
+      class="h-screen flex items-center"
     >
-      <h2 class="text-3xl font-bold mb-5">Sobre mi:</h2>
-
-      <p class="text-base sm:lg lg:text-xl">
-        Soy Vladimir, un joven amante de la tecnología, la mejora continua y el
-        aprendizaje autodidacta.
-      </p>
-      <p class="text-base sm:text-lg lg:text-xl my-3">
-        Actualmente soy <span class="font-bold">desarrollador frontend</span>.
-      </p>
-
-      <p class="text-base sm:text-lg lg:text-xl">
-        Priorizando la eficiencia y aprovechando al máximo cada oportunidad para
-        aportar, mejorar y crecer como persona y como profesional.
-      </p>
-
-      <p class="text-base sm:text-lg lg:text-xl my-3">
-        Tan pragmático como idealista. Fan del ejercicio físico, la lectura y la
-        música; siempre intentando trabajar en esa sinergia entre cuerpo y
-        mente.
-      </p>
+      <div class="bg-slate-800 p-4 flex flex-col text-start shadow-sm shadow-gray-800">
+        <h2 class="text-3xl font-bold mb-5">Sobre mi:</h2>
+        <p class="text-base sm:lg lg:text-xl">
+          Soy Vladimir, un joven amante de la tecnología, la mejora continua y el
+          aprendizaje autodidacta.
+        </p>
+        <p class="text-base sm:text-lg lg:text-xl my-3">
+          Actualmente soy <span class="font-bold">desarrollador frontend</span>.
+        </p>
+        <p class="text-base sm:text-lg lg:text-xl">
+          Priorizando la eficiencia y aprovechando al máximo cada oportunidad para
+          aportar, mejorar y crecer como persona y como profesional.
+        </p>
+        <p class="text-base sm:text-lg lg:text-xl my-3">
+          Tan pragmático como idealista. Fan del ejercicio físico, la lectura y la
+          música; siempre intentando trabajar en esa sinergia entre cuerpo y
+          mente.
+        </p>
+      </div>
     </section>
 
     <section id="contact" class="section-style gap-6 text-gray-200">
       <div>
-        <p class="text-2xl font-semibold">
-          Siempre disponible para nuevos retos.
-        </p>
         <p class="text-2xl font-semibold">Me puede contactar a:</p>
       </div>
 
@@ -178,7 +174,7 @@ import Slider from "../components/Slider.astro";
 
 <style>
   .section-style {
-    @apply flex flex-col justify-center items-center h-[100vh];
+    @apply flex flex-col justify-center items-center h-screen;
   }
 
   .parrafo {
